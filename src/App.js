@@ -12,8 +12,16 @@ import TextField from '@mui/material/TextField';
 import { styled,createTheme} from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
 import { orange } from '@mui/material/colors';
+import '@fontsource/roboto/700.css';
+import Typography from '@mui/material/Typography';
 
 const theme=createTheme({
+  typography:{
+       h1:{
+        fontSize:30,
+        marginBottom:10
+       }
+  },
    palette:{
     primary:{
       main:orange[500],
@@ -59,8 +67,10 @@ function App() {
   return (
     
       <ThemeProvider theme={theme}>
+        
       <div className="App">
       <header className="App-header">
+      <Typography variant='h1' component={'div'}>Welcome to MUI</Typography>
         <ButtonStyle/>
         <TextField
         variant='filled'
