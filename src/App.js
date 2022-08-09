@@ -9,8 +9,17 @@ import SendIcon from '@mui/icons-material/Send';
 import Checkbox from '@mui/material/Checkbox';
 import { FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { styled } from '@mui/material/styles';
+import { styled,createTheme} from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { orange } from '@mui/material/colors';
 
+const theme=createTheme({
+   palette:{
+    primary:{
+      main:orange[500],
+    }
+   }
+})
 const useStyle=styled({
   root:{
     background:'green',
@@ -48,8 +57,9 @@ function CheckBoxExample(){
 
 function App() {
   return (
-    <div className="App">
-      
+    
+      <ThemeProvider theme={theme}>
+      <div className="App">
       <header className="App-header">
         <ButtonStyle/>
         <TextField
@@ -93,7 +103,8 @@ function App() {
       
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-    </div>
+      </div>
+      </ThemeProvider>
   );
 }
 
