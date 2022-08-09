@@ -14,7 +14,9 @@ import { ThemeProvider } from '@emotion/react';
 import { orange } from '@mui/material/colors';
 import '@fontsource/roboto/700.css';
 import Typography from '@mui/material/Typography';
-
+import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 const theme=createTheme({
   typography:{
        h1:{
@@ -67,19 +69,31 @@ function App() {
   return (
     
       <ThemeProvider theme={theme}>
+        <Container maxWidth='md'>
         
       <div className="App">
       <header className="App-header">
       <Typography variant='h1' component={'div'}>Welcome to MUI</Typography>
         <ButtonStyle/>
-        <TextField
+        <Grid container spacing={6} justifyContent={'center'}>
+        <Grid item>
+          <Paper style={{height:100,width:80,}} elevation={6} varient="string" square />
+        </Grid>
+        <Grid item>
+          <Paper style={{height:100,width:80}} elevation={6} varient="string" square />
+        </Grid>
+        <Grid item>
+          <Paper style={{height:100,width:80}} elevation={6} varient="string" square />
+        </Grid>
+        </Grid>
+        {/* <TextField
         variant='filled'
         color='secondary'
         type='email'
         //label=' '
        // value=''
         placeholder='amannitp272@gmail.com'
-        />
+        /> */}
       <CheckBoxExample/>
       <ButtonGroup variant='contained' size='large' onClick={()=>alert("hello world")}>
         <Button
@@ -114,6 +128,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       </div>
+      </Container>
       </ThemeProvider>
   );
 }
