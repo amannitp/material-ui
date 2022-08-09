@@ -7,16 +7,24 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Checkbox from '@mui/material/Checkbox';
+import { FormControlLabel } from '@mui/material';
 
 function CheckBoxExample(){
   const [checked,setChecked]=React.useState(true);
   return(
     <div>
-    <Checkbox
+      <FormControlLabel
+      control={
+        <Checkbox
     checked={checked}
+    size="large"
     onChange={(e)=>setChecked(e.target.checked)}
     inputProps={{"aria-label":"primary checkbox"}}
     />
+      }
+      label="test-checking"
+      />
+   
     </div>
   )
 }
