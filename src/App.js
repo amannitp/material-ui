@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Checkbox from '@mui/material/Checkbox';
-import { FormControlLabel } from '@mui/material';
+import { FormControlLabel, MenuItem, Toolbar } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { styled,createTheme} from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
@@ -17,6 +17,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/material/Menu';
 const theme=createTheme({
   typography:{
        h1:{
@@ -73,6 +76,17 @@ function App() {
         
       <div className="App">
       <header className="App-header">
+        <AppBar>
+          <Toolbar>
+            <IconButton>
+              <MenuIcon/>
+            </IconButton>
+            <Typography variant='h6'>
+                  NavBar 
+            </Typography>
+            <Button>Log in</Button>
+          </Toolbar>
+        </AppBar>
       <Typography variant='h1' component={'div'}>Welcome to MUI</Typography>
         <ButtonStyle/>
         <Grid container spacing={6} justifyContent={'center'}>
